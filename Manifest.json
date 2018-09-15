@@ -6,7 +6,8 @@
 
     "browser_action": {
         "default_title": "This is the default title",
-        "default_popup": "Popup.html"
+        "default_popup": "Popup.html",
+        "default_icon": "Flipside.png"
     },
     "content_scripts": [
         {
