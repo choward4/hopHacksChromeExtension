@@ -1,6 +1,6 @@
 html {
-    width: 300px;
-    height: 300px;
+    width: 320px;
+    height: 200px;
     margin: 0px;
     padding: 0px;
     background-color: #e5e5e5;
@@ -22,9 +22,10 @@ html, body {
     background-color: #fbfbfb;
 }
 
-h1 {
-    margin-top: 50px;
+h2 {
+    margin-top: 20px;
     margin-bottom: 0px;
+    font-family: "Courier New", Courier, monospace;
 }
 
 .dropdown {
@@ -32,7 +33,7 @@ h1 {
 }
 
 .btn {
-    margin-top:20px;
+    margin-top:0px;
     color: #FFFFFF;
     background-color: #63c121;
 }
@@ -43,9 +44,9 @@ h1 {
 }
 
 .dropdown_container {
-    margin: 20px auto;
+    margin: 20px auto 10px auto;
     width: 200px;
-    height: 50px;
+    height: 25px;
 }
 
 .slider {
