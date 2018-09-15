@@ -1,3 +1,7 @@
+chrome.tabs.getSelected(null, function (tab) {
+    console.log(tab);
+});
+
 function newTabs() {
     chrome.tabs.getSelected(null, function (tab) {
         var searchString = tab.title;
@@ -57,6 +61,7 @@ window.onload = function getValue(){
 
 }
 */
+
 
 function dropDownValue() {
     var dropDown = document.getElementById("main-dropdown");
