@@ -1,10 +1,20 @@
 function newTabs() {
     chrome.tabs.getSelected(null, function (tab) {
-        var searchString = tab.title    
-        var searchTerms = searchString.replace(" ", "+")
-        var myURL = "https://www.google.com/webhp?#q=" + searchTerms + "&btnI=I&as_sitesearch=twitter.com"
-        var something = chrome.tabs.create({ url: myURL }); 
-        chrome.tabs.create({ url: something }); 
+        count = 0;
+        var sitesVisited = "";
+        var searchString = tab.title;
+        var searchTerms = searchString.replace(" ", "+");
+        numTabs = getValue();
+        while(count < numTabs) {
+            // searchTerm+-site%3Afoxnews.com+-site%3Acnn.com
+            // "&btnI=I&as_sitesearch=twitter.com" old way of doing it
+            var myURL = "https://www.google.com/webhp?#q=" + searchTerms + "&btnI=I&" + sitesVisited;
+            chrome.tabs.create({ url: myURL });
+            //find way to obtain site last visited
+            site = "site.com"
+            //subtract site visited
+            site = "+-" + site
+        }
     });
 }
 
@@ -14,7 +24,7 @@ chrome.tabs.getSelected(null, function (tab) {
 });
 
 /* Display current value of slider */
-window.onload = function getValue() {
+window.onload = function getValue(){
     var sliderVal = document.getElementById("numArticlesSlider")
     var valueOut = document.getElementById("currVal")
     valueOut.innerText = sliderVal.value
