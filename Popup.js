@@ -2,7 +2,7 @@ function newTabs() {
     chrome.tabs.getSelected(null, function (tab) {
         var searchString = tab.title    
         var searchTerms = searchString.replace(" ", "+")
-        var myURL = "https://www.google.com/webhp?#q=" + searchTerms /*+ "&btnI=I&as_sitesearch=reddit.com"*/
+        var myURL = "https://www.google.com/webhp?#q=" + searchTerms + "&btnI=I&as_sitesearch=twitter.com"
         chrome.tabs.create({ url: myURL }); 
     });
 }
@@ -28,8 +28,3 @@ document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('tabBtn').addEventListener('click', newTabs);
 });
 
-chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
-    chrome.tabs.sendMessage(tabs[0].id, {greeting: "hello"}, function(response) {
-      console.log("tori wants to get rid of the error message, please ignore");
-    });
-  });
