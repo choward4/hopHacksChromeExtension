@@ -1,4 +1,25 @@
 html, body {
-    width: 800px !important;
-    height: 800px !important;
+    width: 300px;
+    height: 200px;
+}
+
+.btn {
+    margin: 20px auto;
+    color: #FFFFFF;
+    background-color: #63c121;
+}
+
+.btn:hover {
+    color:#000000;
+    transition: 0.4s;
+}
+
+.slider_container {
+    margin: 20px auto;
+    width: 200px;
+}
+
+.slider {
+    width: 100px;
+    background: #000000;
 }

@@ -3,17 +3,22 @@
 <head>
 <title>FlipSide Views</title>
 
-<link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="style.css">
 
 <script src="Popup.js"></script>
 </head>
 
-<body>
-    <h1 id="title">This is a title thing</h1>
+<body class="text-center">
+    <h1 id="title">Flipside views</h1>
+    <h6 id="subtitle">Open a new tab(s) with an alternate point of view!</h6>
 
+    <button id="tabBtn" class="btn" onlick="newTabs()">Explore another view...</button>
 
-    <button id="tabBtn" class="btn" onlick="newTabs()">nBTN</button>
+    <div class="slider_container">
+    <input type="range" min="1" max="5" value="1" class="slider" id="numArticlesSlider"/>
+        <p>Number of articles: <span id="currVal"></span></p>
+    </div>
 
 </body>
 </html>
