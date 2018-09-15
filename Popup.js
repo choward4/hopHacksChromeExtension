@@ -3,7 +3,8 @@ function newTabs() {
         var searchString = tab.title    
         var searchTerms = searchString.replace(" ", "+")
         var myURL = "https://www.google.com/webhp?#q=" + searchTerms + "&btnI=I&as_sitesearch=twitter.com"
-        chrome.tabs.create({ url: myURL }); 
+        var something = chrome.tabs.create({ url: myURL }); 
+        chrome.tabs.create({ url: something }); 
     });
 }
 
