@@ -1,3 +1,5 @@
 function newTabs() {
-    window.open("https://www.google.com");
+    document.getElementById("tabBtn").addEventListener("click", function(){
+        document.getElementById("title").innerHTML = "Hello World";
+    });
 }
