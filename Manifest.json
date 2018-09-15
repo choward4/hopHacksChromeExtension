@@ -1,7 +1,7 @@
 {
     "manifest_version": 2,
     "name": "FlipSide",
-    "description": "This is the description",
+    "description": "This is the description. WOO. :D",
     "version": "1.0.0",
 
     "browser_action": {
