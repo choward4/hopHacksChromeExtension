@@ -10,10 +10,9 @@ function newTabs() {
         if(dropDownValue() === "normal") {
             // parse current website title
             var taburl = "";
-            console.log(tab.url)
             taburl = tab.url;
             index = 0;
-            
+            // TODO Remove youtube, too related to thing
             if(taburl.search(".com/") != -1) {
                 taburl = taburl.slice(0, taburl.search(".com/") + 4);
             } else if(taburl.search(".net/") != -1) {
@@ -31,10 +30,10 @@ function newTabs() {
             URL += "+-site%3A" + taburl + "&btnI=I";
             chrome.tabs.create({ url: URL });
         } else if (dropDownValue() === "political") {
-            foxURL = URL + "+site%3A+foxnews.com&btnI=I"
-            cnnURL = URL + "+site%3A+CNN.com&btnI=I"
-            apURL = URL + "+site%3A+apnews.com&btnI=I"
-            bbcURL = URL + "+site%3A+bbc.com&btnI=I"
+            foxURL = URL + "+site%3Afoxnews.com&btnI=I"
+            cnnURL = URL + "+site%3Acnn.com&btnI=I"
+            apURL = URL + "+site%3Aapnews.com&btnI=I"
+            bbcURL = URL + "+site%3Abbc.com&btnI=I"
             chrome.tabs.create({ url: foxURL });
             chrome.tabs.create({ url: cnnURL });
             chrome.tabs.create({ url: apURL });
