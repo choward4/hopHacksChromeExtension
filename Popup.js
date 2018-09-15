@@ -4,6 +4,8 @@ function newTabs() {
         var searchTerms = searchString.replace(" ", "+");
         var URL = "https://www.google.com/webhp?#q=" + searchTerms;
         if(dropDownValue() === "normal") {
+            // parse current webist title
+            
             URL += "&btnI=I"
             chrome.tabs.create({ url: URL });
         } else if (dropDownValue() === "political") {
