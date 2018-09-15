@@ -4,9 +4,27 @@ function newTabs() {
         var searchTerms = searchString.replace(" ", "+");
         var URL = "https://www.google.com/webhp?#q=" + searchTerms;
         if(dropDownValue() === "normal") {
-            // parse current webist title
+            // parse current website title
+            var taburl = "";
+            console.log(tab.url)
+            taburl = tab.url;
+            index = 0;
             
-            URL += "&btnI=I"
+            if(taburl.search(".com/") != -1) {
+                taburl = taburl.slice(0, taburl.search(".com/") + 4);
+            } else if(taburl.search(".net/") != -1) {
+                taburl = taburl.slice(0, taburl.search(".net/") + 4);
+            } else if(taburl.search(".edu/") != -1) {
+                taburl = taburl.slice(0, taburl.search(".edu/") + 4);
+            } else if(taburl.search(".gov/") != -1) {
+                taburl = taburl.slice(0, taburl.search(".gov/") + 4);
+            } else if(taburl.search(".org/") != -1) {
+                taburl = taburl.slice(0, taburl.search(".org/") + 4);
+            } else {
+                taburl = "lol";
+            }
+            
+            URL += "+-site%3A" + taburl + "&btnI=I";
             chrome.tabs.create({ url: URL });
         } else if (dropDownValue() === "political") {
             foxURL = URL + "+site%3A+foxnews.com&btnI=I"
@@ -26,10 +44,6 @@ function newTabs() {
        
     });
 }
-
-chrome.tabs.getSelected(null, function (tab) {
-    console.log(tab.title);
-});
 
 /* Display current value of slider 
 window.onload = function getValue(){
