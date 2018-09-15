@@ -1,0 +1,15 @@
+{
+    "manifest_version": 2,
+    "name": "FlipSide",
+    "description": "This is the description",
+    "version": "1.0.0",
+
+    "browser_action": {
+        "default_title": "This is the default title",
+        "default_popup": "popup.html"
+    },
+
+    "permissions": [
+        "http://*/*", "https://*/*"
+    ]
+}
