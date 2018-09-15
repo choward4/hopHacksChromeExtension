@@ -2,7 +2,7 @@ function newTabs() {
     chrome.tabs.getSelected(null, function (tab) {
         var searchString = tab.title    
         var searchTerms = searchString.replace(" ", "+")
-        var myURL = "https://www.google.com/webhp?#q=" + searchTerms + "&btnI=I&as_sitesearch=wikipedia.org"
+        var myURL = "https://www.google.com/webhp?#q=" + searchTerms /*+ "&btnI=I&as_sitesearch=reddit.com"*/
         chrome.tabs.create({ url: myURL }); 
     });
 }
