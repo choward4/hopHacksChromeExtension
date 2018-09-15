@@ -27,6 +27,10 @@ h1 {
     margin-bottom: 0px;
 }
 
+.dropdown {
+    border-radius: 5px;
+}
+
 .btn {
     margin-top:20px;
     color: #FFFFFF;
@@ -38,7 +42,7 @@ h1 {
     transition: 0.4s;
 }
 
-.slider_container {
+.dropdown_container {
     margin: 20px auto;
     width: 200px;
     height: 50px;

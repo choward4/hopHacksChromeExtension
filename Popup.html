@@ -14,11 +14,15 @@
         <h1 id="title">Flipside views</h1>
         <h6 id="subtitle">Open a new tab(s) with an alternate point of view!</h6>
 
+        <div class="dropdown_container">
+            <select id="main-dropdown" class ="dropdown">
+                <option value="normal">Normal</option>
+                <option value="political">Political/News</option>
+                <option value="wikipedia">Wikipedia</option>
+            </select>
+        </div>
+
         <button id="tabBtn" class="btn" onlick="newTabs()">Explore another view...</button>
 
-    <div class="slider_container">
-    <input type="range" min="1" max="5" value="1" class="slider" id="numArticlesSlider"/>
-        <p>Number of articles: <span id="currVal"></span></p>
-    </div>
 </body>
 </html>
