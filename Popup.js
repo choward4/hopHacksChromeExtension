@@ -7,26 +7,43 @@ function newTabs() {
         var searchString = tab.title;
         var searchTerms = searchString.replace(" ", "+");
         var URL = "https://www.google.com/webhp?#q=" + searchTerms;
+        regex = /^((http[s]?|ftp):\/)?\/?([^:\/\s]+.{1}([a-z]{3}))((\/\w+)*\/?)([\w\-\.]+[^#?\s]+)?(.*)?(#[\w\-]+)?$/
+        var taburl = tab.url;
+
+        //parse string
+
+        var match = regex.exec(taburl)
+        /* match[3] is definitely right! */
+        taburl = match[3];
+        // gets rid of dots
+        
+        while(taburl.lastIndexOf('.') != taburl.indexOf('.')) {
+            taburl = taburl.substring(taburl.indexOf('.') + 1, taburl.lastIndexOf('.') + 4);
+        }
+
+        
         if(dropDownValue() === "normal") {
-            // parse current website title
-            var taburl = "";
-            taburl = tab.url;
-            index = 0;
             // TODO Remove youtube, too related to thing
-            if(taburl.search(".com/") != -1) {
-                taburl = taburl.slice(0, taburl.search(".com/") + 4);
+            /*
+            if(taburl.search(".com") != -1) {
+                taburl = taburl.substring(0, taburl.search(".com/") + 5);
+                getRidOfDots(taburl, ".com/");
             } else if(taburl.search(".net/") != -1) {
                 taburl = taburl.slice(0, taburl.search(".net/") + 4);
+                taburl = getRidOfDots(taburl, taburl.search(".net/"));
             } else if(taburl.search(".edu/") != -1) {
                 taburl = taburl.slice(0, taburl.search(".edu/") + 4);
+                taburl = getRidOfDots(taburl, taburl.search(".edu/"));
             } else if(taburl.search(".gov/") != -1) {
                 taburl = taburl.slice(0, taburl.search(".gov/") + 4);
+                taburl = getRidOfDots(taburl, taburl.search(".gov/"));
             } else if(taburl.search(".org/") != -1) {
                 taburl = taburl.slice(0, taburl.search(".org/") + 4);
+                taburl = getRidOfDots(taburl, taburl.search(".org/"));
             } else {
                 taburl = "lol";
             }
-            
+            */
             URL += "+-site%3A" + taburl + "&btnI=I";
             chrome.tabs.create({ url: URL });
         } else if (dropDownValue() === "political") {
@@ -65,6 +82,13 @@ window.onload = function getValue(){
 function dropDownValue() {
     var dropDown = document.getElementById("main-dropdown");
     return dropDown.value;
+}
+
+function getRidOfDots(taburl, tld) {
+    while(taburl.search(".") != taburl.search(tld)) {
+        taburl = taburl.substring(taburl.search(".") + 1, taburl.search(tld) + 5);
+    }
+    return taburl;
 }
 
 document.addEventListener('DOMContentLoaded', function () {
