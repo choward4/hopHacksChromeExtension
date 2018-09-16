@@ -47,14 +47,12 @@ function newTabs() {
             URL += "+-site%3A" + taburl + "&btnI=I";
             chrome.tabs.create({ url: URL });
         } else if (dropDownValue() === "political") {
-            foxURL = URL + "+site%3Afoxnews.com&btnI=I"
-            cnnURL = URL + "+site%3Acnn.com&btnI=I"
-            apURL = URL + "+site%3Aapnews.com&btnI=I"
-            bbcURL = URL + "+site%3Abbc.com&btnI=I"
-            chrome.tabs.create({ url: foxURL });
-            chrome.tabs.create({ url: cnnURL });
-            chrome.tabs.create({ url: apURL });
-            chrome.tabs.create({ url: bbcURL })
+            rightURL = URL + "+site%3Afoxnews.com+OR+site%3Adailycaller.com+OR+site%3Aijr.com&btnI=I"
+            leftURL = URL + "+site%3Acnn.com+OR+site%3Acnbc.com+OR+site%3Aabc.go.com&btnI=I"
+            middleURL = URL + "+site%3Aapnews.com+OR+site%3Abbc.com+OR+site%3Anpr.org&btnI=I"
+            chrome.tabs.create({ url: rightURL });
+            chrome.tabs.create({ url: leftURL });
+            chrome.tabs.create({ url: middleURL });
         } else if (dropDownValue() === "wikipedia") {
             URL = URL + "+site%3A+wikipedia.com&btnI=I"
             chrome.tabs.create({ url: URL });

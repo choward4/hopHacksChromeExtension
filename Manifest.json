@@ -1,11 +1,11 @@
 {
     "manifest_version": 2,
-    "name": "FlipSide",
-    "description": "This is the description. WOO. :D",
+    "name": "FlipSide Views",
+    "description": "Opens new tab(s) with an alternative point of view!",
     "version": "1.1",
 
     "browser_action": {
-        "default_title": "This is the default title",
+        "default_title": "FlipSide Views",
         "default_popup": "Popup.html",
         "default_icon": "Flipside.png"
     },
